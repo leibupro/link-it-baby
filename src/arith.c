@@ -38,7 +38,7 @@ uint32_t _mul( uint32_t a, uint32_t b )
 uint32_t _div( uint32_t a, uint32_t b )
 {
   uint32_t ret_val = 0x00000000;
-  ret_val = a / b;
+  ret_val = ( b > 0 ) ? a / b : 0x00000000;
   return ret_val;
 }
 
