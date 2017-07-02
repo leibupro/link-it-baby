@@ -16,20 +16,11 @@ prog_name=${PWD##*/}
 cur_date=$(${date_bin} +%s)
 cur_version=$(${cat_bin} ./link-it-baby_version)
 exclude_patterns_file="${prog_name}/.gitignore"
-exclude_file=${exclude_patterns_file}
-exclude_git_folder="${prog_name}/.git"
 
 
 cd ..
 
-if [ -f ${exclude_patterns_file} ]; then
-  ${tar_bin} --exclude=${exclude_file} \
-             --exclude=${exclude_git_folder} \
-             --exclude-from=${exclude_patterns_file} \
-             -cvJf "${prog_name}-${cur_version}-${cur_date}.tar.xz" "${prog_name}"
-else
-  ${tar_bin} --exclude=${exclude_file} \
-             --exclude=${exclude_git_folder} \
-             -cvJf "${prog_name}-${cur_version}-${cur_date}.tar.xz" "${prog_name}"
-fi
+${tar_bin} --exclude-vcs \
+           --exclude-from=${exclude_patterns_file} \
+           -cvJf "${prog_name}-${cur_version}-${cur_date}.tar.xz" "${prog_name}"
 

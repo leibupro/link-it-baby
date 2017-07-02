@@ -15,13 +15,13 @@
 #define EXIT_SUCCESS 0
 
 static void 
-print_operation( char operand, uint32_t a, uint32_t b, uint32_t c );
+print_operation( char operator, uint32_t a, uint32_t b, uint32_t c );
 
 
 static void 
-print_operation( char operand, uint32_t a, uint32_t b, uint32_t c )
+print_operation( char operator, uint32_t a, uint32_t b, uint32_t c )
 {
-  ( void )fprintf( stdout, "%10u %c %10u = %10u\n", a, operand, b, c );
+  ( void )fprintf( stdout, "%10u %c %10u = %10u\n", a, operator, b, c );
 }
 
 
