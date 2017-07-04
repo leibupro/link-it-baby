@@ -98,19 +98,19 @@ $(OBJDIRDYN)/%.o: %.c $(OBJDIRDYN)
 
 
 clean:
-	@if [ -d "$(OBJDIR)" ]; then \
+	@if [ -d $(OBJDIR) ]; then \
     rm -rf $(OBJDIR); \
   fi
-	@if [ -d "$(OBJDIRSTAT)" ]; then \
+	@if [ -d $(OBJDIRSTAT) ]; then \
     rm -rf $(OBJDIRSTAT); \
   fi
-	@if [ -d "$(OBJDIRDYN)" ]; then \
+	@if [ -d $(OBJDIRDYN) ]; then \
     rm -rf $(OBJDIRDYN); \
   fi
-	@if [ -d "$(LIBDIR)" ]; then \
+	@if [ -d $(LIBDIR) ]; then \
     rm -rf $(LIBDIR); \
   fi
-	@if [ -d "$(BINDIR)" ]; then \
+	@if [ -d $(BINDIR) ]; then \
     rm -rf $(BINDIR); \
   fi
 
